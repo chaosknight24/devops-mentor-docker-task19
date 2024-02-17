@@ -1,0 +1,8 @@
+version: "3"
+services:
+  frontend:
+    image: "nginx:latest"
+    ports:
+      - "8088:80"
+    volumes:
+      - /home/alex/devops-mentor-docker-task19/src/html:/usr/share/nginx/html:ro
