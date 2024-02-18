@@ -5,4 +5,12 @@ services:
     ports:
       - "8088:80"
     volumes:
-      - /home/alex/devops-mentor-docker-task19/src/html:/usr/share/nginx/html:ro
+      - /home/alex/devops-mentor-docker-task19/src/html:/usr/share/nginx/html:ro  
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NODE_VERSION: 18
+    environment:
+      ENV_NAME: staging
