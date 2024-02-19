@@ -18,6 +18,15 @@ services:
         NODE_VERSION: 18
     environment:
       ENV_NAME: staging
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: "1"
+          memory: 200M
+        reservations:
+          cpus: "0.25"
+          memory: 50M
     networks:
       - front_back_net
 
